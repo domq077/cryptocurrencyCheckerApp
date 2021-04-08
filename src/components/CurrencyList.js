@@ -14,8 +14,11 @@ const CurrencyList = () => {
                 <ul>
                     {currency.map(curr => {
                         return (
-                            <li>
+                            <li key={curr.id}>
+                                <img src={curr.image} alt={curr.name}/>
+                                <div>{curr.symbol}</div>
                                 <div>{curr.name}</div>
+                                <div>{curr.current_price}$</div>
                             </li>
                         );
                     })}
