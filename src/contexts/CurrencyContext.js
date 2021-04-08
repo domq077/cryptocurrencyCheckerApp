@@ -9,7 +9,7 @@ const CurrencyContextProvider = (props) => {
     ]);
 
     return (
-        <CurrencyContext.Provider value={{currency}}>
+        <CurrencyContext.Provider value={{ currency }}>
             {props.children}
         </CurrencyContext.Provider>
     );

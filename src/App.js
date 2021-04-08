@@ -1,9 +1,13 @@
-import './App.css';
+import React from 'react';
+import CurrencyList from './components/CurrencyList';
+import CurrencyContextProvider from './contexts/CurrencyContext';
 
 function App() {
   return (
     <div className="App">
-      In progress...
+      <CurrencyContextProvider>
+        <CurrencyList />
+      </CurrencyContextProvider>
     </div>
   );
 }
