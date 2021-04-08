@@ -11,7 +11,6 @@ const CurrencyList = () => {
                     return (
                         <li>
                             <div>{curr.name}</div>
-                            <div>{curr.value}</div>
                         </li>
                     );
                 })}
