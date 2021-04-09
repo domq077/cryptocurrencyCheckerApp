@@ -11,9 +11,6 @@ body {
 .currency-list {
   width: 90%;
   max-width: 800px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 0 auto;
 }
 

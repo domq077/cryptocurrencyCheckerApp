@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {  } from 'react';
 
 const Header = () => {
     return (
         <div>
-            Header
+            <h1>Cryptocurrency List</h1>
         </div>
     );
 }
