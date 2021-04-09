@@ -10,12 +10,13 @@ const CurrencyList = () => {
         return <div>Loading...</div>;
       } else {
         return (
-            <div>
+            <div className="currency-list">
                 <ul>
                     {currency.map(curr => {
                         return (
                             <li key={curr.id}>
-                                <img src={curr.image} alt={curr.name}/>
+                                <img className="currency-list__img"
+                                    src={curr.image} alt={curr.name}/>
                                 <div>{curr.symbol}</div>
                                 <div>{curr.name}</div>
                                 <div>{curr.current_price}$</div>

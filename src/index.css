@@ -5,9 +5,39 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #333;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.currency-list {
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.currency-list ul {
+  width: 100%;
+  list-style-type: none;
+}
+
+.currency-list li {
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  height: 80px;
+}
+
+.currency-list ul li:nth-child(2n+1) {
+  background: #54ECC4;
+}
+
+.currency-list ul li:nth-child(2n+2) {
+  background: #00B38F;
+}
+
+.currency-list__img {
+  width: 40px;
+  height: 40px;
 }
