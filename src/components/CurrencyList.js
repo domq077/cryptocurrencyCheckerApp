@@ -17,9 +17,10 @@ const CurrencyList = () => {
                             <li key={curr.id}>
                                 <img className="currency-list__img"
                                     src={curr.image} alt={curr.name}/>
-                                <div>{curr.symbol}</div>
+                                <div>{curr.symbol.toUpperCase()}</div>
                                 <div>{curr.name}</div>
                                 <div>{curr.current_price}$</div>
+                                <button>Details</button>
                             </li>
                         );
                     })}
