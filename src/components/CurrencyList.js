@@ -29,13 +29,13 @@ const CurrencyList = () => {
                     })
                     .map(curr => {
                         return (
-                            <li key={curr.id}>
+                            <li className="currency-list__item" key={curr.id}>
                                 <img className="currency-list__img"
                                     src={curr.image} alt={curr.name}/>
                                 <div>{curr.symbol.toUpperCase()}</div>
                                 <div>{curr.name}</div>
                                 <div>{curr.current_price}$</div>
-                                <button>Details</button>
+                                <button className="currency-list__btn">Details</button>
                             </li>
                         );
                     })}
