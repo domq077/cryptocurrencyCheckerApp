@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { CurrencyContext } from '../contexts/CurrencyContext';
 
 const CurrencyList = () => {
@@ -35,7 +36,9 @@ const CurrencyList = () => {
                                 <div>{curr.symbol.toUpperCase()}</div>
                                 <div>{curr.name}</div>
                                 <div>{curr.current_price}$</div>
-                                <button className="currency-list__btn">Details</button>
+                                <Link to={`/details/${curr.id}`}>
+                                    <button className="currency-list__btn">Details</button>
+                                </Link>
                             </li>
                         );
                     })}
