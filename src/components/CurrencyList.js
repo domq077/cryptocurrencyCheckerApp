@@ -14,6 +14,7 @@ const CurrencyList = () => {
             <div className="currency-list">
                 <div>
                 <input type="text"
+                    className="currency-list__searchField"
                     onChange={e => setValue(e.target.value)} 
                     placeholder="Cryptocurrency name..."
                 />
