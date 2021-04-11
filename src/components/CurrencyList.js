@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CurrencyContext } from '../contexts/CurrencyContext';
+import Loader from './Loader';
 
 const CurrencyList = () => {
     const { error, isLoaded, currency } = useContext(CurrencyContext);
@@ -9,7 +10,7 @@ const CurrencyList = () => {
     if (error) {
         return <div>Error: {error.message}</div>;
       } else if (!isLoaded) {
-        return <div>Loading...</div>;
+        return <Loader />;
       } else {
         return (
             <div className="currency-list">

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import Loader from './Loader';
 
 const ItemDeatils = ({ match }) => {
     const [error, setError] = useState(null);
@@ -9,18 +10,6 @@ const ItemDeatils = ({ match }) => {
         market_data: false
     });
     const history = useHistory();
-
-    // useEffect(() => {
-    //     fetchItem();
-    // }, [])
-
-    // const fetchItem = async () => {
-    //     const fetchItem = await fetch(`https://api.coingecko.com/api/v3/coins/${match.params.id}?localization=false&developer_data=false&sparkline=true`);
-    //     const item = await fetchItem.json();
-    //     setItem(item);
-    //     console.log(item)
-    // };
-
     useEffect(() => {
         fetch(`https://api.coingecko.com/api/v3/coins/${match.params.id}?localization=false&developer_data=false&sparkline=true`)
             .then(res => res.json())
@@ -40,7 +29,7 @@ const ItemDeatils = ({ match }) => {
     if (error) {
         return <div>Error: {error.message}</div>;
       } else if (!isLoaded) {
-        return <div>Loading...</div>;
+        return <Loader />;
       } else {
         return (
             <div>
