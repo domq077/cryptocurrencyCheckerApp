@@ -14,9 +14,11 @@ function App() {
           <Header />
           <Switch>
             <Route path="/" exact component={CurrencyList} />
-            <Route path="/details/:id" component={ItemDetails} />
           </Switch>
         </CurrencyContextProvider>
+          <Switch>
+            <Route path="/details/:id" component={ItemDetails} />
+          </Switch>
       </div>
     </Router>
   );
