@@ -38,7 +38,7 @@ const ItemDeatils = ({ match }) => {
         return (
             <div className="item">
                 <div>
-                    <img src={item.image.large}/>
+                    <img className="item__img" src={item.image.large}/>
                 </div>
                 <div>
                     <p><span className="item__details">Name:</span> {item.name}</p>

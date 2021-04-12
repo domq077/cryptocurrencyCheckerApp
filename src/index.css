@@ -106,3 +106,8 @@ body {
   color: #333;
   font-size: 1.35rem;
 }
+
+.item__img {
+  width: 150px;
+  height: 150px;
+}
