@@ -36,16 +36,22 @@ const ItemDeatils = ({ match }) => {
         return <Loader />;
       } else {
         return (
-            <div>
-                <h1>Name: {item.name}</h1>
-                <img src={item.image.large}/>
-                <p>Symbol: {item.symbol}</p>
-                <p>Genesis date: {item.genesis_date}</p>
-                <p>Current price: {item.market_data.current_price.usd}$</p>
-                <p>Price change in last 24h: {item.market_data.price_change_24h}$</p>
-                <p>High value in 24h: {item.market_data.high_24h.usd}$</p>
-                <p>Low value in 24h: {item.market_data.low_24h.usd}$</p>
-                <button onClick={() => history.goBack()}>Back to list</button>
+            <div className="item">
+                <div>
+                    <img src={item.image.large}/>
+                </div>
+                <div>
+                    <h1><span className="item__details">Name:</span> {item.name}</h1>
+                    <p><span className="item__details">Symbol:</span> {item.symbol}</p>
+                    <p>Genesis date: {item.genesis_date}</p>
+                </div>
+                <div>
+                    <p><span className="item__details">Current price:</span> {item.market_data.current_price.usd}$</p>
+                    <p><span className="item__details">Price change in last 24h:</span> {item.market_data.price_change_24h}$</p>
+                    <p><span className="item__details">High value in 24h:</span> {item.market_data.high_24h.usd}$</p>
+                    <p><span className="item__details">Low value in 24h:</span> {item.market_data.low_24h.usd}$</p>
+                    <button onClick={() => history.goBack()}>Back to list</button>
+                </div>
             </div>
         );
       }
