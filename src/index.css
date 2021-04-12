@@ -104,10 +104,16 @@ body {
 .item__details {
   font-weight: 700;
   color: #333;
-  font-size: 1.35rem;
+  font-size: 1.1rem;
 }
 
 .item__img {
   width: 150px;
   height: 150px;
+}
+
+.item__info {
+  color: black;
+  font-size: 1.15rem;
+  font-weight: 500;
 }

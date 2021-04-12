@@ -39,24 +39,22 @@ const ItemDeatils = ({ match }) => {
             <div className="item">
                 <div>
                     <img className="item__img" src={item.image.large}/>
+                    <p className="item__info"><span className="item__details">Name:</span> {item.name}</p>
+                    <p className="item__info"><span className="item__details">Symbol:</span> {item.symbol?.toUpperCase()}</p>
+                    <p className="item__info"><span className="item__details">Genesis date:</span> {item.genesis_date}</p>
                 </div>
                 <div>
-                    <p><span className="item__details">Name:</span> {item.name}</p>
-                    <p><span className="item__details">Symbol:</span> {item.symbol}</p>
-                    <p><span className="item__details">Genesis date:</span> {item.genesis_date}</p>
+                    <p className="item__info"><span className="item__details">Current price:</span> {item.market_data.current_price.usd}$</p>
+                    <p className="item__info"><span className="item__details">Price change in last 24h:</span> {item.market_data.price_change_24h}$</p>
+                    <p className="item__info"><span className="item__details">High value in 24h:</span> {item.market_data.high_24h.usd}$</p>
+                    <p className="item__info"><span className="item__details">Low value in 24h:</span> {item.market_data.low_24h.usd}$</p>
+                    <button
+                        className="btn btn--large"
+                        onClick={() => history.goBack()}
+                    >
+                        Back to list
+                    </button>
                 </div>
-                <div>
-                    <p><span className="item__details">Current price:</span> {item.market_data.current_price.usd}$</p>
-                    <p><span className="item__details">Price change in last 24h:</span> {item.market_data.price_change_24h}$</p>
-                    <p><span className="item__details">High value in 24h:</span> {item.market_data.high_24h.usd}$</p>
-                    <p><span className="item__details">Low value in 24h:</span> {item.market_data.low_24h.usd}$</p>
-                </div>
-                <button
-                    className="btn btn--large"
-                    onClick={() => history.goBack()}
-                >
-                    Back to list
-                </button>
             </div>
         );
       }
