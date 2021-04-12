@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
 import Loader from './Loader';
 
 const ItemDeatils = ({ match }) => {
@@ -14,6 +15,16 @@ const ItemDeatils = ({ match }) => {
         }
     });
     const history = useHistory();
+    const date = []    
+    const getDate = () => {
+        for(let i = 1; i <= 169; i++) {
+            let temp = new Date(Date.now() - ( 24 * 60 * 60 * 1000 + i*3600*1000)).toLocaleString();
+            date.push(temp)
+        } 
+    }
+
+    getDate()
+
     useEffect(() => {
         fetch(`https://api.coingecko.com/api/v3/coins/${match.params.id}?localization=false&developer_data=false&sparkline=true`)
             .then(res => res.json())
@@ -21,7 +32,7 @@ const ItemDeatils = ({ match }) => {
                 (result) => {
                     setIsLoaded(true);
                     setItem(result);
-                    console.log(item);
+                    console.log(date);
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -29,6 +40,17 @@ const ItemDeatils = ({ match }) => {
                 }
             )
     }, []);
+
+    // const data = [{name: 'Page A', uv: [200, 300, 400]}];
+    // const renderLineChart = (
+    //     <LineChart width={600} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+    //         <Line type="monotone" dataKey="uv" stroke="#000" />
+    //         <CartesianGrid stroke="#000" strokeDasharray="5 5" />
+    //         <XAxis dataKey="name" />
+    //         <YAxis />
+    //         <Tooltip />
+    //     </LineChart>
+    // );
 
     if (error) {
         return <div>Error: {error.message}</div>;
@@ -54,6 +76,9 @@ const ItemDeatils = ({ match }) => {
                     >
                         Back to list
                     </button>
+                </div>
+                <div>
+                    {/* {renderLineChart} */}
                 </div>
             </div>
         );
