@@ -38,7 +38,7 @@ const CurrencyList = () => {
                                 <div>{curr.name}</div>
                                 <div>{curr.current_price}$</div>
                                 <Link to={`/details/${curr.id}`}>
-                                    <button className="currency-list__btn">Details</button>
+                                    <button className="btn">Details</button>
                                 </Link>
                             </li>
                         );

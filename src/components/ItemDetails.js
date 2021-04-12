@@ -41,17 +41,22 @@ const ItemDeatils = ({ match }) => {
                     <img src={item.image.large}/>
                 </div>
                 <div>
-                    <h1><span className="item__details">Name:</span> {item.name}</h1>
+                    <p><span className="item__details">Name:</span> {item.name}</p>
                     <p><span className="item__details">Symbol:</span> {item.symbol}</p>
-                    <p>Genesis date: {item.genesis_date}</p>
+                    <p><span className="item__details">Genesis date:</span> {item.genesis_date}</p>
                 </div>
                 <div>
                     <p><span className="item__details">Current price:</span> {item.market_data.current_price.usd}$</p>
                     <p><span className="item__details">Price change in last 24h:</span> {item.market_data.price_change_24h}$</p>
                     <p><span className="item__details">High value in 24h:</span> {item.market_data.high_24h.usd}$</p>
                     <p><span className="item__details">Low value in 24h:</span> {item.market_data.low_24h.usd}$</p>
-                    <button onClick={() => history.goBack()}>Back to list</button>
                 </div>
+                <button
+                    className="btn btn--large"
+                    onClick={() => history.goBack()}
+                >
+                    Back to list
+                </button>
             </div>
         );
       }
