@@ -1,17 +1,9 @@
 import React from 'react';
-import { Area, AreaChart, CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
+import { Area, AreaChart, CartesianGrid, Tooltip, XAxis, YAxis } from 'recharts';
 
 const Chart = (props) => {
     return (
         <div>
-            {/* // <LineChart width={1200} height={300} data={priceHistoryObj} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-            //     <Line type="monotone" dataKey="price" stroke="#8884d8" />
-            //     <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-            //     <XAxis dataKey="name" />
-            //     <YAxis />
-            //     <Tooltip />
-            // </LineChart> */}
-
             <AreaChart 
                 width={730} height={250} data={props.priceHistoryObj}
                 margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
