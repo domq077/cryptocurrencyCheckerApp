@@ -11,19 +11,33 @@ const ItemDeatils = ({ match }) => {
         market_data: {
             current_price: false,
             high_24h: false,
-            low_24h: false
+            low_24h: false,
+            sparkline_7d: {
+                price: false
+            }
         }
     });
     const history = useHistory();
     const date = []    
     const getDate = () => {
-        for(let i = 1; i <= 169; i++) {
-            let temp = new Date(Date.now() - ( 24 * 60 * 60 * 1000 + i*3600*1000)).toLocaleString();
+        for(let i = 0; i <= 168; i++) {
+            let temp = new Date(Date.now() - (7 * 24 * 60 * 60 * 1000) + (i*3600*1000)).toLocaleString();
             date.push(temp)
         } 
     }
 
     getDate()
+
+    const priceHistory = [item.market_data.sparkline_7d.price];
+    console.log(priceHistory);
+
+    const priceHistoryObj = [];
+    
+    for(let i = 0; i <= 168; i++) {
+        priceHistoryObj.push({name: date[i], price: priceHistory[0][i]})
+    }
+
+    console.log(priceHistoryObj)
 
     useEffect(() => {
         fetch(`https://api.coingecko.com/api/v3/coins/${match.params.id}?localization=false&developer_data=false&sparkline=true`)
@@ -41,16 +55,15 @@ const ItemDeatils = ({ match }) => {
             )
     }, []);
 
-    // const data = [{name: 'Page A', uv: [200, 300, 400]}];
-    // const renderLineChart = (
-    //     <LineChart width={600} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-    //         <Line type="monotone" dataKey="uv" stroke="#000" />
-    //         <CartesianGrid stroke="#000" strokeDasharray="5 5" />
-    //         <XAxis dataKey="name" />
-    //         <YAxis />
-    //         <Tooltip />
-    //     </LineChart>
-    // );
+    const renderLineChart = (
+        <LineChart width={1200} height={300} data={priceHistoryObj} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+            <Line type="monotone" dataKey="price" stroke="#8884d8" />
+            <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+        </LineChart>
+    );
 
     if (error) {
         return <div>Error: {error.message}</div>;
@@ -78,7 +91,7 @@ const ItemDeatils = ({ match }) => {
                     </button>
                 </div>
                 <div>
-                    {/* {renderLineChart} */}
+                    {renderLineChart}
                 </div>
             </div>
         );

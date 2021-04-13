@@ -91,7 +91,7 @@ body {
 .item {
   background: #54ECC4;
   width: 90%;
-  max-width: 800px;
+  max-width: 1500px;
   min-height: 400px;
   display: grid;
   grid-template-columns: 1fr 1fr;
