@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Chart from './Chart';
+import ChartData from '../logic/ChartData';
 import Loader from './Loader';
 
 const ItemDeatils = ({ match }) => {
@@ -18,27 +19,19 @@ const ItemDeatils = ({ match }) => {
         }
     });
     const history = useHistory();
-    const date = []    
-    const getDate = () => {
-        for(let i = 0; i <= 168; i++) {
-            let temp = new Date(Date.now() - (7 * 24 * 60 * 60 * 1000) + (i*3600*1000)).toLocaleString();
-            date.push(temp)
-        } 
-    }
-
-    getDate()
-
-    const priceHistory = [item.market_data.sparkline_7d.price];
-    console.log(priceHistory);
-
-    const priceHistoryObj = [];
-    
-    for(let i = 0; i <= 168; i++) {
-        priceHistoryObj.push({name: date[i], price: priceHistory[0][i]})
-    }
-
-    console.log(priceHistoryObj)
-
+    // const date = []    
+    // const getDate = () => {
+    //     for(let i = 0; i <= 168; i++) {
+    //         let temp = new Date(Date.now() - (7 * 24 * 60 * 60 * 1000) + (i*3600*1000)).toLocaleString();
+    //         date.push(temp)
+    //     } 
+    // }
+    // getDate()
+    // const priceHistory = [item.market_data.sparkline_7d.price];
+    // const priceHistoryObj = [];
+    // for(let i = 0; i <= 168; i++) {
+    //     priceHistoryObj.push({name: date[i], price: priceHistory[0][i]})
+    // }
     useEffect(() => {
         fetch(`https://api.coingecko.com/api/v3/coins/${match.params.id}?localization=false&developer_data=false&sparkline=true`)
             .then(res => res.json())
@@ -46,7 +39,6 @@ const ItemDeatils = ({ match }) => {
                 (result) => {
                     setIsLoaded(true);
                     setItem(result);
-                    console.log(date);
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -81,7 +73,7 @@ const ItemDeatils = ({ match }) => {
                     </button>
                 </div>
                 <div>
-                    <Chart priceHistoryObj={priceHistoryObj} />
+                    <Chart priceHistoryObj={ChartData(item.market_data.sparkline_7d.price)} />
                 </div>
             </div>
         );
