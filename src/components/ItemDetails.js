@@ -56,7 +56,7 @@ const ItemDeatils = ({ match }) => {
                         Back to list
                     </button>
                 </div>
-                <div>
+                <div className="item__chart">
                     <Chart priceHistoryObj={ChartData(item.market_data.sparkline_7d.price)} />
                 </div>
             </div>
