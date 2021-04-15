@@ -1,0 +1,23 @@
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 200px auto;
+    color: #F2ECFF;
+    font-size: 2rem;
+  }
+  
+  .loader__item {
+    font-size: 4rem;
+    animation: rotation 2.5s infinite linear;
+  }
+  
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
