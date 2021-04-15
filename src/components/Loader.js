@@ -4,11 +4,9 @@ import React from 'react';
 
 const Loader = () => {
     return (
-        <div>
-            <FontAwesomeIcon icon={faSync} />
-            <p>
-                Loading...
-            </p>
+        <div className="loader">
+                <FontAwesomeIcon className="loader__item" icon={faSync} spin />
+                <p>Loading...</p>
         </div>
     );
 }
