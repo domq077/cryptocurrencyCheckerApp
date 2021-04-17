@@ -17,4 +17,10 @@
     color: #fff;
     border: 2px solid #fff;
     background: #333;
-  } 
+  }
+
+  @media (max-width: 820px) {
+    .btn {
+      width: 80px;
+    }
+  }
