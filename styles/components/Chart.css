@@ -1,6 +1,7 @@
 .chart {
   width: 100%;
   height: 300px;
+  margin-bottom: 50px;
 }
 
 .chart__title {
