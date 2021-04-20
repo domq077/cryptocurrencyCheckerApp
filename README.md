@@ -22,3 +22,11 @@ Click [here](https://hungry-mcnulty-9e00b6.netlify.app/) to check my app!
 #### Used tools
 - Create React App
 - Webpack
+
+#### Screenshots from app
+
+Main view
+![main view](https://github.com/domq077/cryptocurrencyCheckerApp/blob/main/public/scr1.PNG)
+
+Item details view
+![item details](https://github.com/domq077/cryptocurrencyCheckerApp/blob/main/public/scr2.PNG)
