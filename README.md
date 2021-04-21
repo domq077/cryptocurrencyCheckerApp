@@ -7,8 +7,9 @@ Click [here](https://hungry-mcnulty-9e00b6.netlify.app/) to check my app!
 ---
 ### App description
 
-#### Function
+#### Functions
 - List of cryptocurrencies
+- Filter by cryptocurrency name
 - Details for each cryptocurrency
 - Chart with last 7 days past data of price
 
